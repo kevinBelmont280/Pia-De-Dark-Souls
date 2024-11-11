@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login2.VerEquipos">
+
+    <ContentPage.Content>
+        <StackLayout Padding="10" BackgroundColor="#1e1e1e">
+            <!-- Fondo oscuro -->
+            <!-- Buscador -->
+            <SearchBar Placeholder="Buscar equipo..." 
+                       TextChanged="SearchBar_TextChanged"
+                       BackgroundColor="#333333" 
+                        TextColor="White"
+                       PlaceholderColor="#bbb" 
+                       HeightRequest="40"
+                       Margin="0,0,0,10"/>
+
+                <!-- Tabla de equipos y jugadores -->
+                <CollectionView x:Name="EquiposCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10" BackgroundColor="#2d2d2d" Margin="0,5"  >
+                                <Label Text="{Binding Nombre}" FontSize="Medium" FontAttributes="Bold" TextColor="#b6b6b6" />
+                                <CollectionView ItemsSource="{Binding Jugadores}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout Orientation="Vertical" Padding="5" BackgroundColor="#3a3a3a">
+                                                <Label Text="{Binding Nombre}" FontSize="Small" FontAttributes="Bold" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Clase}" FontSize="Small" TextColor="#a8a8a8"/>
+                                                <Label Text="{Binding Regalo}" FontSize="Small" TextColor="#a8a8a8"/>
+                                                <Label Text="Estadísticas:" FontSize="Small" FontAttributes="Bold" TextColor="#b6b6b6"/>
+
+                                                <Label Text="{Binding Vitalidad, StringFormat='Vitalidad: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Aprendizaje, StringFormat='Aprendizaje: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Aguante, StringFormat='Aguante: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Fuerza, StringFormat='Fuerza: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Destreza, StringFormat='Destreza: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Resistencia, StringFormat='Resistencia: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Inteligencia, StringFormat='Inteligencia: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                                <Label Text="{Binding Fe, StringFormat='Fe: {0}'}" FontSize="Small" TextColor="#e0e0e0"/>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login2.MainPage"
+             BackgroundColor="#121212">
+
+    <ContentPage.Background>
+        <!-- Fondo oscuro con un gradiente sutil hacia el negro -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1C1C1C" Offset="0.0" />
+            <GradientStop Color="#121212" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <StackLayout Padding="30" Spacing="15" VerticalOptions="Center">
+        <!-- Logo o imagen decorativa con un borde metálico y un toque envejecido -->
+        <Image Source="logo.png" HeightRequest="120" HorizontalOptions="Center" />
+
+        <!-- Título de bienvenida con un toque de blanco envejecido -->
+        <Label Text="Bienvenido" 
+               FontSize="Large" 
+               TextColor="#D3D3D3" 
+               HorizontalOptions="Center" 
+               FontAttributes="Bold" />
+
+        <!-- Campo de usuario con un toque oscuro y detalles envejecidos -->
+        <Label Text="Usuario" 
+               FontSize="Medium" 
+               TextColor="#A9A9A9" />
+        <Entry x:Name="entryUsername" 
+               Placeholder="Ingresa tu usuario" 
+               PlaceholderColor="#7C7C7C" 
+               TextColor="White" 
+               Background="#2F2F2F"/>
+
+        <!-- Campo de contraseña con un estilo acorde al tema oscuro -->
+        <Label Text="Contraseña" 
+               FontSize="Medium" 
+               TextColor="#A9A9A9" />
+        <Entry x:Name="entryPassword" 
+               Placeholder="Ingresa tu contraseña" 
+               PlaceholderColor="#7C7C7C" 
+               IsPassword="True" 
+               TextColor="White" 
+               BackgroundColor="#2F2F2F"
+                />
+
+        <!-- Botón de inicio con un color rojo metálico oscuro y bordes redondeados -->
+        <Button Text="Iniciar sesión" 
+                BackgroundColor="#8B0000" 
+                TextColor="White" 
+                CornerRadius="20" 
+                HeightRequest="50"
+                WidthRequest="200"
+                HorizontalOptions="Center" 
+                BorderColor="#5C0000"
+                BorderWidth="2" 
+                Clicked="Button_Clicked" />
+
+        <!-- Botón de registro con un estilo más tenue y sutil -->
+        <Button Text="Registrarte" 
+                BackgroundColor="Transparent" 
+                TextColor="#B22222" 
+                FontAttributes="Italic"
+                HeightRequest="40"
+                WidthRequest="200"
+                HorizontalOptions="Center" 
+                Clicked="Button_Clicked_1" />
+
+    </StackLayout>
+</ContentPage>

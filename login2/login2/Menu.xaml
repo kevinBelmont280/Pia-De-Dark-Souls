@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login2.Menu"
+             BackgroundColor="#121212">
+
+    <ContentPage.Background>
+        <!-- Fondo oscuro con gradiente sutil hacia el negro -->
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1C1C1C" Offset="0.0" />
+            <GradientStop Color="#121212" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <!-- Título del menú con un toque metálico y envejecido -->
+        <Label Text="Menú Principal"
+               FontSize="24"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" 
+               TextColor="#D3D3D3" />
+
+        <!-- Botón para crear un equipo con color metálico oscuro y bordes -->
+        <Button Text="Crear Equipo" 
+                BackgroundColor="#8B0000" 
+                TextColor="White" 
+                CornerRadius="20" 
+                HeightRequest="50" 
+                HorizontalOptions="Center" 
+                BorderColor="#5C0000"
+                BorderWidth="2"
+                Clicked="Button_Clicked" />
+
+        <!-- Botón para ver equipo con un tono oscuro sutil -->
+        <Button Text="Ver Equipo" 
+                BackgroundColor="#8B0000" 
+                TextColor="White" 
+                CornerRadius="20" 
+                HeightRequest="50" 
+                HorizontalOptions="Center" 
+                BorderColor="#5C0000"
+                BorderWidth="2"
+                Clicked="Button_Clicked_1" />
+    </StackLayout>
+</ContentPage>

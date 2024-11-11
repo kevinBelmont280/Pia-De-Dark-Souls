@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="login2.Creación_de_Equipo">
+    <ScrollView Padding="30" BackgroundColor="Black">
+        <!-- Agregado ScrollView para habilitar el desplazamiento -->
+        <StackLayout Spacing="20" VerticalOptions="Start" BackgroundColor="Black">
+
+            <!-- Campo para el nombre del equipo -->
+            <Label Text="Nombre del Equipo" FontSize="20" HorizontalOptions="Center" TextColor="Red"/>
+            <Entry x:Name="entryNombreEquipo" Placeholder="Ingresa el nombre del equipo" BackgroundColor="#4B4B4B" TextColor="White"/>
+
+            <!-- Botón para crear el equipo -->
+            <Button Text="Crear Equipo" BackgroundColor="#8B0000" TextColor="White" CornerRadius="20" HeightRequest="50" Clicked="Button_Clicked"/>
+
+            <!-- Campo para nombre del jugador -->
+            <Label Text="Nombre del Jugador" FontSize="20" HorizontalOptions="Center" TextColor="Red"/>
+            <Entry x:Name="entryNombreJugador" Placeholder="Ingresa el nombre del jugador" BackgroundColor="#4B4B4B" TextColor="White"/>
+
+            <!-- Picker para sexo -->
+            <Label Text="Sexo" FontSize="20" HorizontalOptions="Center" TextColor="Red"/>
+            <Picker x:Name="pickerSexo" BackgroundColor="#4B4B4B" TextColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Masculino</x:String>
+                        <x:String>Femenino</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="Escoje una clase " FontSize="20" HorizontalOptions="Center" TextColor="Red"/>
+
+            <Picker x:Name="pickerClase" SelectedIndexChanged="pickerClase_SelectedIndexChanged" BackgroundColor="#4B4B4B" TextColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Guerrero</x:String>
+                        <x:String>Caballero</x:String>
+                        <x:String>Vagabundo</x:String>
+                        <x:String>Ladrón</x:String>
+                        <x:String>Bandido</x:String>
+                        <x:String>Cazador</x:String>
+                        <x:String>Hechicero</x:String>
+                        <x:String>Piromántico</x:String>
+                        <x:String>Clérigo</x:String>
+                        <x:String>Marginado</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <!-- Imagen de la clase -->
+            <Image x:Name="imageClase" HeightRequest="200" Aspect="AspectFit" HorizontalOptions="Center" Source="https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-black-solid-color-background-image_556932.jpg"/>
+
+            <!-- Picker para elegir regalo -->
+            <Label Text="Escoja un Regalo" FontSize="20" HorizontalOptions="Center" TextColor="Red"/>
+            <Picker x:Name="pickerRegalo" BackgroundColor="#4B4B4B" TextColor="White">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Bendición divina</x:String>
+                        <x:String>Bomba negra in</x:String>
+                        <x:String>Humanid. Gemelas</x:String>
+                        <x:String>Prismáticos</x:String>
+                        <x:String>Colgante</x:String>
+                        <x:String>Llave maestra</x:String>
+                        <x:String>Anillo de diminuto</x:String>
+                        <x:String>Anillo de bruja</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <!-- Botón para agregar jugador -->
+            <Button Text="Agregar Jugador" BackgroundColor="#2E2E2E" TextColor="#B4B4B4" CornerRadius="20" HeightRequest="50" FontSize="20" Clicked="Button_Clicked_1"/>
+
+            <!-- Texto de jugadores -->
+            <Label x:Name="labelJugadores" Text="Jugadores: 0/5" FontSize="22" HorizontalOptions="Center" TextColor="#B4B4B4" FontAttributes="Bold"/>
+
+            <!-- Sección de Estadísticas -->
+            <Label Text="Estadísticas" FontSize="22" HorizontalOptions="Center" TextColor="#B4B4B4" FontAttributes="Bold" />
+
+            <!-- Estadísticas: Vitalidad, Aprendizaje, Aguante, etc. -->
+            <StackLayout>
+                <Label Text="Vitalidad" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelVitalidad" ClassId="Vitalidad" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <Label Text="Aprendizaje" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelAprendizaje" ClassId="Aprendizaje" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <Label Text="Aguante" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelAguante" ClassId="Aguante" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <Label Text="Fuerza" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelFuerza" ClassId="Fuerza" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <Label Text="Destreza" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelDestreza" ClassId="Destreza" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <Label Text="Resistencia" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelResistencia" ClassId="Resistencia" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <Label Text="Inteligencia" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelInteligencia" ClassId="Inteligencia" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <Label Text="Fe" FontSize="18" TextColor="#B4B4B4"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="-" Clicked="DisminuirValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                    <Label x:Name="labelFe" ClassId="Fe" Text="11" FontSize="18" HorizontalOptions="Center" TextColor="#B4B4B4"/>
+                    <Button Text="+" Clicked="AumentarValor" BackgroundColor="#1C1C1C" TextColor="#B4B4B4" BorderColor="#B4B4B4"/>
+                </StackLayout>
+
+                <!-- Etiqueta para mostrar los puntos disponibles -->
+                <Label x:Name="labelPuntos" FontSize="18" HorizontalOptions="Center" Text="Puntos disponibles: 20" TextColor="#B4B4B4"/>
+            </StackLayout>
+
+            <!-- Botón para finalizar la creación del equipo -->
+            <Button Text="Finalizar Creación" BackgroundColor="#B30000" TextColor="White" CornerRadius="20" HeightRequest="50" FontSize="20" Clicked="Button_Clicked_2"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
