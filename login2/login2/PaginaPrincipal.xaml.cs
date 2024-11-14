@@ -20,7 +20,8 @@ namespace login2
 
             if (user != null)
             {
-                await DisplayAlert("Inicio Correcto", "Bienvenido " + username, "Salir");
+                await DisplayAlert("Bienvenido", "¡Hola " + username + "! Esta aplicación te permite crear y gestionar equipos personalizados para tus partidas en línea de Dark Souls. Organiza a tus compañeros, asigna roles y prepárate para enfrentar cualquier desafío. ¡Buena suerte en tus aventuras!", "Continuar");
+
                 // Navegar a Menu.xaml (MenuPage)
                 await Navigation.PushAsync(new Menu());
             }

@@ -14,7 +14,7 @@
 
     <StackLayout Padding="30" Spacing="15" VerticalOptions="Center">
         <!-- Logo o imagen decorativa con un borde metálico y un toque envejecido -->
-        <Image Source="logo.png" HeightRequest="120" HorizontalOptions="Center" />
+        <Image Source="https://wallpapers.com/images/hd/dark-souls-remastered-logo-91ql2db05dnyebd7-2.jpg"/>
 
         <!-- Título de bienvenida con un toque de blanco envejecido -->
         <Label Text="Bienvenido" 

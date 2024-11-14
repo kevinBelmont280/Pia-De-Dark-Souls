@@ -6,6 +6,8 @@
         <!-- Agregado ScrollView para habilitar el desplazamiento -->
         <StackLayout Spacing="20" VerticalOptions="Start" BackgroundColor="Black">
 
+            <Image Source="https://wallpapers.com/images/hd/dark-souls-remastered-logo-91ql2db05dnyebd7-2.jpg"/>
+
             <!-- Campo para el nombre del equipo -->
             <Label Text="Nombre del Equipo" FontSize="20" HorizontalOptions="Center" TextColor="Red"/>
             <Entry x:Name="entryNombreEquipo" Placeholder="Ingresa el nombre del equipo" BackgroundColor="#4B4B4B" TextColor="White"/>
@@ -48,7 +50,7 @@
             </Picker>
 
             <!-- Imagen de la clase -->
-            <Image x:Name="imageClase" HeightRequest="200" Aspect="AspectFit" HorizontalOptions="Center" Source="https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-black-solid-color-background-image_556932.jpg"/>
+            <Image x:Name="imageClase" WidthRequest="450"  HeightRequest="450" Aspect="AspectFit" HorizontalOptions="Center" Source="https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-black-solid-color-background-image_556932.jpg"/>
 
             <!-- Picker para elegir regalo -->
             <Label Text="Escoja un Regalo" FontSize="20" HorizontalOptions="Center" TextColor="Red"/>

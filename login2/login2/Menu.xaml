@@ -14,6 +14,8 @@
 
     <StackLayout Padding="30" Spacing="20" VerticalOptions="Center">
         <!-- Título del menú con un toque metálico y envejecido -->
+        <Image Source="https://wallpapers.com/images/hd/dark-souls-remastered-logo-91ql2db05dnyebd7-2.jpg"/>
+
         <Label Text="Menú Principal"
                FontSize="24"
                HorizontalOptions="Center"

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "login2.Android", "login2.An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "login2.iOS", "login2.iOS\login2.iOS.csproj", "{4514B84B-C54D-41F0-A54C-3F8C94D92FFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "login2", "login2\login2.csproj", "{64A69DDB-D60D-4DF8-AF6C-01028CE66536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "login2", "login2\login2.csproj", "{64A69DDB-D60D-4DF8-AF6C-01028CE66536}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

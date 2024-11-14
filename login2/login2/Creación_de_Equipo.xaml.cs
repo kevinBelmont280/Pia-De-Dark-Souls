@@ -77,14 +77,32 @@ namespace login2
                 DisplayAlert("Límite Alcanzado", "Ya has agregado el máximo de jugadores (5).", "OK");
             }
         }
+        private void ReiniciarEstadisticas()
+        {
+            labelVitalidad.Text = "11";
+            labelAprendizaje.Text = "11";
+            labelAguante.Text = "11";
+            labelFuerza.Text = "11";
+            labelDestreza.Text = "11";
+            labelResistencia.Text = "11";
+            labelInteligencia.Text = "11";
+            labelFe.Text = "11";
+        }
 
         // Evento para el botón "Finalizar Creación"
         private void Button_Clicked_2(object sender, EventArgs e)
         {
             if (jugadoresAgregados == 5)
             {
-                DisplayAlert("Equipo Creado", $"El equipo '{equipo.Nombre}' ha sido creado exitosamente con {equipo.Jugadores.Count} jugadores.", "OK");
-                // Aquí puedes guardar el equipo en una base de datos, o pasar el objeto `equipo` a otra página
+                DisplayAlert("Equipo Creado", $"El equipo ha sido creado exitosamente con {jugadoresAgregados} jugadores.", "OK");
+
+                // Reinicia los puntos disponibles a 20 para el próximo jugador
+                puntosDisponibles = 20;
+                labelPuntos.Text = $"Puntos disponibles: {puntosDisponibles}";
+
+                // Reinicia cada estadística individual a su valor inicial
+
+                ReiniciarEstadisticas();
             }
             else
             {
